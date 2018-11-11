@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Members details registered for the Events</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Members details registered for the Events</h1>
+<div th:if="${not #lists.isEmpty(members)}">
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>LastName</th>
+            <th>Email</th>
+            <th>Telephone</th>
+            <th>Address</th>
+        </tr>
+        <tr th:each="member: ${members}">
+             <td th:text="${member.firstname}" />
+             <td th:text="${member.lastname}"/>
+             <td th:text="${member.email}" />
+             <td th:text="${member.telephone}" />
+             <td th:text="${member.address}" />
+        </tr>
+    </table>
+</div>
+</body>
+</html>
